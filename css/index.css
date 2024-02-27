@@ -1,0 +1,160 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #c8deff;
+  margin-top: 10%;
+  padding: 0;
+  height: 100vh;
+  animation: gradientAnimation 20s linear infinite forwards;
+}
+
+@keyframes gradientAnimation {
+  0%,
+  25% {
+    background: #c8deff;
+  }
+  50% {
+    background: #4be4ff;
+  }
+  75% {
+    background: #a883ff;
+  }
+  100% {
+    background: #c8deff;
+  }
+}
+
+.main-content {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h3 {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  font-size: 40px;
+  color: #0f0f0f;
+}
+
+.card1 {
+  background-color: #ff7b00;
+  width: 300px;
+  height: 220px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
+
+.card2 {
+  background-color: #007cc4;
+  width: 300px;
+  height: 220px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
+
+.card3 {
+  background-color: #15ff00;
+  width: 300px;
+  height: 220px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
+
+.card4 {
+  background-color: #e00000;
+  width: 300px;
+  height: 220px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
+
+.card5 {
+  background-color: #ffae00;
+  width: 300px;
+  height: 220px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.card-text {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.fa {
+  margin-right: 8px;
+}
+
+.button {
+  background-color: #1e90ff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: #105192;
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #7dbeff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00629b;
+  border-radius: 5px;
+}

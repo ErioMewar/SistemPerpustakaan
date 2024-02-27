@@ -1,0 +1,60 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #cbecff;
+}
+
+.main-content {
+  margin: 20px;
+}
+
+.card {
+  width: 400px;
+  padding: 20px;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #4abdff;
+  color: #ffffff;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #7dbeff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00629b;
+  border-radius: 5px;
+}

@@ -1,0 +1,50 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #cbecff;
+}
+
+h3 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.ulasan-buku {
+  margin-top: 10%;
+}
+
+.rating {
+  display: inline-block;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  cursor: pointer;
+  font-size: 25px;
+  color: #444444;
+  display: inline-block;
+  padding-right: 5px;
+  padding-bottom: 10px;
+}
+
+.rating input:checked + label,
+.rating label:hover,
+.rating input:checked ~ label:hover,
+.rating input:checked ~ label:hover ~ label {
+  color: #fbff00;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #7dbeff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00629b;
+  border-radius: 5px;
+}

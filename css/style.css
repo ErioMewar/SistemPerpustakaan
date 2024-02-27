@@ -1,0 +1,128 @@
+body {
+  position: relative;
+  background-image: url("../img/form.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  margin: 15px;
+  box-sizing: border-box;
+}
+
+.card {
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 1);
+}
+
+h3 {
+  color: #00629b;
+  border-bottom: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+.card-body {
+  background-color: #cbecff;
+  border-radius: 30px;
+  padding: 30px 40px;
+}
+
+i,
+.form-group label {
+  color: #00629b;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  border-radius: 100px;
+  padding: 10px 15px;
+  color: black;
+  background-color: #ffffff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  color: black;
+}
+
+.btn-register,
+.btn-login {
+  background-color: #00629b;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.btn-register:hover,
+.btn-login:hover {
+  background-color: #003a5c;
+  color: #fff;
+}
+
+.eye {
+  position: absolute;
+  right: 30px;
+  margin-top: -7%;
+  font-size: normal;
+  border: none;
+  cursor: pointer;
+}
+
+.eye:focus {
+  outline: none;
+}
+
+#hide1,
+#hide3 {
+  display: none;
+}
+
+p {
+  font-weight: bold;
+  color: #00629b;
+}
+
+a {
+  color: #02005a;
+}
+
+a:hover {
+  color: #000000;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #7dbeff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00629b;
+  border-radius: 5px;
+}

@@ -1,0 +1,140 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #c8deff;
+  margin-top: 10%;
+  padding: 0;
+  height: 100vh;
+  animation: gradientAnimation 20s linear infinite forwards;
+}
+
+@keyframes gradientAnimation {
+  0%,
+  25% {
+    background: #c8deff;
+  }
+  50% {
+    background: #4be4ff;
+  }
+  75% {
+    background: #a883ff;
+  }
+  100% {
+    background: #c8deff;
+  }
+}
+
+/* Gaya Navbar */
+.navbar {
+  background-color: #1e90ff;
+  color: #ffffff;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.username {
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.system-name {
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 6px 0;
+}
+
+.logout-button {
+  display: inline-block;
+}
+
+.logout-button a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  background-color: #e90000;
+  border-radius: 15px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-button a:hover {
+  background-color: #a30000;
+  color: #dddddd;
+}
+
+/* Gaya Sidebar */
+.sidebar {
+  width: 300px;
+  height: 100%;
+  background-color: #7dbeff;
+  position: fixed;
+  left: -300px;
+  top: 0;
+  overflow-y: auto;
+  padding-top: 100px;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.sidebar a {
+  padding: 15px;
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #1e90ff;
+  transition: 0.3s;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+.footer {
+  background-color: #1e90ff;
+  color: azure;
+  padding: 20px;
+  margin-top: auto;
+  width: 100%;
+}
+
+h3,
+h2 {
+  color: #2e2e2e;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #7dbeff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00629b;
+  border-radius: 5px;
+}
