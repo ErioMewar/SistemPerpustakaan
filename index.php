@@ -21,7 +21,7 @@ if (isset($_POST["login"])) {
             $_SESSION["Level"] = $row["Level"];
             
             switch ($_SESSION["Level"]) {
-                case "administrator": 
+                case "administrator":
                     header("Location: user/administrator/index.php");
                     exit;
                 case "petugas":
