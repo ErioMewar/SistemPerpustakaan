@@ -16,9 +16,7 @@
         <a href="pengembalian.php"><i class="bi bi-list-check"></i> Laporan Pengembalian</a>
         <?php endif; ?>
         <a href="buku.php"><i class="bi bi-book"></i> Buku</a>
-        <?php if ($_SESSION['Level'] != 'peminjam'): ?>
         <a href="kategori.php"><i class="bi bi-list-task"></i> Kategori</a>
-        <?php endif; ?>
         <a href="ulasan.php"><i class="bi bi-chat-dots"></i> Ulasan</a>
         <?php if ($_SESSION['Level'] != 'administrator' && $_SESSION['Level'] != 'petugas'): ?>
         <a href="koleksi.php"><i class="bi bi-bookmarks"></i> Koleksi</a>
