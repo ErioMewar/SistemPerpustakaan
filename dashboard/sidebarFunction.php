@@ -7,7 +7,7 @@
         <a href="../user/<?php echo $_SESSION['Level']; ?>/dataUser.php"><i class="bi bi-person"></i> Data Peminjam</a>
         <?php endif; ?>
         <?php if ($_SESSION['Level'] != 'administrator' && $_SESSION['Level'] != 'petugas'): ?>
-        <a href="../user/<?php echo $_SESSION['Level']; ?>/bukuDipinjam.php"><i class="fa fa-sign-out"></i> Sedang Dipinjam</a>
+        <a href="../user/<?php echo $_SESSION['Level']; ?>/bukuDipinjam.php"><i class="bi bi-box-arrow-right"></i> Sedang Dipinjam</a>
         <?php endif; ?>
         <?php if ($_SESSION['Level'] != 'peminjam'): ?>
         <a href="../user/<?php echo $_SESSION['Level']; ?>/peminjaman.php"><i class="bi bi-list"></i> Laporan Peminjaman</a>
