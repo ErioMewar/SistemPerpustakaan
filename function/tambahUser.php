@@ -36,9 +36,11 @@ if (isset($_POST['tambah'])) {
     $email = trim($_POST["email"]);
     $fullname = trim($_POST["fullname"]);
     $alamat = trim($_POST["alamat"]);
+    $umur = trim($_POST["umur"]);
+    $jk = trim($_POST["jenis_kelamin"]);
 
     // Validate empty fields
-    if (empty($username) || empty($password) || empty($password2) || empty($email) || empty($fullname) || empty($alamat) || empty($level)) {
+    if (empty($username) || empty($password) || empty($password2) || empty($email) || empty($fullname) || empty($alamat) || empty($umur) || empty($jk) || empty($level)) {
         echo "<script>alert('Semua kolom harus diisi. Silakan lengkapi formulir.')</script>";
         $level = strtolower($_GET['Level']);
         header("Refresh: 0; url=tambahUser.php?Level=$level");
@@ -79,7 +81,7 @@ if (isset($_POST['tambah'])) {
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // Add the new user to the database
-    $query = "INSERT INTO user (Username, Password, Email, NamaLengkap, Alamat, Level) VALUES ('$username', '$password', '$email', '$fullname', '$alamat', '$level')";
+    $query = "INSERT INTO user (Username, Password, Email, NamaLengkap, Alamat, Umur, JenisKelamin, Level) VALUES ('$username', '$password', '$email', '$fullname', '$alamat','$umur', '$jk','$level')";
     mysqli_query($db, $query);
 
     $userLevel = ucfirst($level);
@@ -133,23 +135,38 @@ if (isset($_POST['tambah'])) {
     <h2>Tambah <?php echo $level = ucfirst($_GET['Level']); ?></h2>
         <form action="" method="POST">
             <div class="form-group">
-                <label for="username">Username</label>
+                <label for="username">Username:</label>
                 <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan Username (maks.12)">
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email:</label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email">
             </div>
             <div class="form-group">
-                <label for="fullname">Nama Lengkap</label>
+                <label for="fullname">Nama Lengkap:</label>
                 <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Masukkan Nama Lengkap">
             </div>
             <div class="form-group">
-                <label for="alamat">Alamat</label>
+                <label for="alamat">Alamat:</label>
                 <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan Alamat">
             </div>
             <div class="form-group">
-                        <label for="password">Password</label>
+            <label for="umur">Umur:</label>
+            <input type="number" class="form-control" id="umur" name="umur"  placeholder="Masukkan Umur">
+            </div>
+            <div class="form-group">
+            <label>Jenis Kelamin:</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="jenis_kelamin" id="jk_laki" value="Laki-Laki">
+                <label class="form-check-label" for="jk_laki">Laki-Laki</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="jenis_kelamin" id="jk_perempuan" value="Perempuan">
+                <label class="form-check-label" for="jk_perempuan">Perempuan</label>
+            </div>
+            </div>
+            <div class="form-group">
+                        <label for="password">Password:</label>
                         <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan password (min.8)">
                         <span class="eye" id="toggle-password">
                             <i id="hide1" class="fa fa-eye eye"></i>
@@ -157,7 +174,7 @@ if (isset($_POST['tambah'])) {
                         </span>
                     </div>
                     <div class="form-group">
-                        <label for="confirm-password">Konfirmasi Password</label>
+                        <label for="confirm-password">Konfirmasi Password:</label>
                         <input type="password" class="form-control" name="confirm-password" id="confirm-password" placeholder="Konfirmasi password (min.8)">
                         <span class="eye" id="toggle-confirm-password">
                             <i id="hide3" class="fa fa-eye eye"></i>

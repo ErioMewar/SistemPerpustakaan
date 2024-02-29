@@ -55,6 +55,8 @@ $resultPeminjam = $stmtPeminjam->get_result();
                     <th>Email</th>
                     <th>Nama Lengkap</th>
                     <th>Alamat</th>
+                    <th>Umur</th>
+                    <th>Jenis Kelamin</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -69,6 +71,8 @@ $resultPeminjam = $stmtPeminjam->get_result();
                         <td class="break"><?php echo $row['Email']; ?></td>
                         <td class="break"><?php echo $row['NamaLengkap']; ?></td>
                         <td class="break"><?php echo $row['Alamat']; ?></td>
+                        <td class="break"><?php echo $row['Umur']; ?></td>
+                        <td class="break"><?php echo $row['JenisKelamin']; ?></td>
                         <td>
                             <a href="../../function/editUser.php?UserID=<?php echo $row['UserID']; ?>&Level=<?php echo strtolower($row['Level']); ?>" class="btn btn-primary"><i class="bi bi-pencil" title="Edit"></i> Edit</a>
                             <a href="../../function/hapusUser.php?UserID=<?php echo $row['UserID']; ?>&Level=<?php echo strtolower($row['Level']); ?>" onclick="return confirm('Yakin ingin menghapus Administrator ini?');" class="btn btn-danger"><i class="bi bi-trash" title="Hapus"></i> Hapus</a>
@@ -90,6 +94,8 @@ $resultPeminjam = $stmtPeminjam->get_result();
                     <th>Email</th>
                     <th>Nama Lengkap</th>
                     <th>Alamat</th>
+                    <th>Umur</th>
+                    <th>Jenis Kelamin</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -104,6 +110,8 @@ $resultPeminjam = $stmtPeminjam->get_result();
                         <td class="break"><?php echo $row['Email']; ?></td>
                         <td class="break"><?php echo $row['NamaLengkap']; ?></td>
                         <td class="break"><?php echo $row['Alamat']; ?></td>
+                        <td class="break"><?php echo $row['Umur']; ?></td>
+                        <td class="break"><?php echo $row['JenisKelamin']; ?></td>
                         <td>
                             <a href="../../function/editUser.php?UserID=<?php echo $row['UserID']; ?>&Level=<?php echo strtolower($row['Level']); ?>" class="btn btn-primary"><i class="bi bi-pencil" title="Edit"></i> Edit</a>
                             <a href="../../function/hapusUser.php?UserID=<?php echo $row['UserID']; ?>&Level=<?php echo strtolower($row['Level']); ?>" onclick="return confirm('Yakin ingin menghapus Petugas ini?');" class="btn btn-danger"><i class="bi bi-trash" title="Hapus"></i> Hapus</a>
@@ -125,6 +133,8 @@ $resultPeminjam = $stmtPeminjam->get_result();
                     <th>Email</th>
                     <th>Nama Lengkap</th>
                     <th>Alamat</th>
+                    <th>Umur</th>
+                    <th>Jenis Kelamin</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -139,6 +149,8 @@ $resultPeminjam = $stmtPeminjam->get_result();
                         <td class="break"><?php echo $row['Email']; ?></td>
                         <td class="break"><?php echo $row['NamaLengkap']; ?></td>
                         <td class="break"><?php echo $row['Alamat']; ?></td>
+                        <td class="break"><?php echo $row['Umur']; ?></td>
+                        <td class="break"><?php echo $row['JenisKelamin']; ?></td>
                         <td>
                             <a href="../../function/editUser.php?UserID=<?php echo $row['UserID']; ?>&Level=<?php echo strtolower($row['Level']); ?>" class="btn btn-primary"><i class="bi bi-pencil" title="Edit"></i> Edit</a>
                             <a href="../../function/hapusUser.php?UserID=<?php echo $row['UserID']; ?>&Level=<?php echo strtolower($row['Level']); ?>" onclick="return confirm('Yakin ingin menghapus Peminjam ini?');" class="btn btn-danger"><i class="bi bi-trash" title="Hapus"></i> Hapus</a>

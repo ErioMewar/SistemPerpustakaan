@@ -10,23 +10,6 @@ if (!isset($_SESSION['Username'])) {
 $username = $_SESSION['Username'];
 $level = $_GET['Level'];
 
-if (isset($_POST['cancel'])) {
-    switch ($_SESSION["Level"]) {
-        case "administrator":
-            header("Location: ../user/administrator/dataUser.php#$level");
-            exit;
-            break;
-        case "petugas":
-            header("Location: ../user/petugas/dataUser.php#$level");
-            exit;
-            break;
-        default:
-            header("Location: ../login.php");
-            exit;
-            break;
-    }
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ambil data yang dikirimkan dari form
     $userID = $_POST['UserID'];
@@ -34,11 +17,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $namaLengkap = $_POST['full-name'];
     $alamat = $_POST['alamat'];
+    $umur = $_POST['umur'];
+    $jk = $_POST['jenis_kelamin'];
+
+    // Validasi form
+    if (empty($username) || empty($email) || empty($namaLengkap) || empty($alamat) || empty($umur) || empty($jk)) {
+        echo "<script>alert('Semua kolom harus diisi. Silakan lengkapi formulir.')</script>";
+        exit;
+    }
 
     // Query untuk update data pengguna
-    $query = "UPDATE user SET Username = ?, Email = ?, NamaLengkap = ?, Alamat = ? WHERE UserID = ?";
+    $query = "UPDATE user SET Username = ?, Email = ?, NamaLengkap = ?, Alamat = ?, Umur = ?, JenisKelamin = ? WHERE UserID = ?";
     $stmt = $db->prepare($query);
-    $stmt->bind_param("ssssi", $username, $email, $namaLengkap, $alamat, $userID);
+    $stmt->bind_param("ssssisi", $username, $email, $namaLengkap, $alamat, $umur, $jk, $userID);
     $stmt->execute();
 
     // Redirect ke halaman daftar pengguna setelah update
@@ -107,6 +98,21 @@ if (isset($_GET['UserID'])) {
         <div class="form-group">
             <label for="alamat">Alamat:</label>
             <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo $row['Alamat']; ?>">
+        </div>
+        <div class="form-group">
+            <label for="umur">Umur:</label>
+            <input type="number" class="form-control" id="umur" name="umur" value="<?php echo $row['Umur']; ?>">
+        </div>
+        <div class="form-group">
+            <label>Jenis Kelamin:</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="jenis_kelamin" id="jk_laki" value="Laki-Laki" <?php if ($row['JenisKelamin'] === 'Laki-Laki') echo 'checked'; ?>>
+                <label class="form-check-label" for="jk_laki">Laki-Laki</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="jenis_kelamin" id="jk_perempuan" value="Perempuan" <?php if ($row['JenisKelamin'] === 'Perempuan') echo 'checked'; ?>>
+                <label class="form-check-label" for="jk_perempuan">Perempuan</label>
+            </div>
         </div>
         <button type="submit" onclick="return confirm('Yakin ingin mengubah <?php echo ucfirst($level); ?> ini?');" class="btn btn-primary"><i class="bi bi-floppy" title="Simpan"></i> Simpan</button>
         <button type="submit" class="btn btn-danger" name="cancel"><i class="bi bi-x-circle" title="Batal"></i> Batal</button>

@@ -9,10 +9,12 @@ if (isset($_POST['register'])) {
     $email = trim($_POST["email"]);
     $fullname = trim($_POST["fullname"]);
     $alamat = trim($_POST["alamat"]);
+    $umur = trim($_POST["umur"]);
+    $jk = trim($_POST["jenis_kelamin"]);
     $level = strtolower(trim($_POST["level"]));
 
     // Validate empty fields
-    if (empty($username) || empty($password) || empty($password2) || empty($email) || empty($fullname) || empty($alamat) || empty($level)) {
+    if (empty($username) || empty($password) || empty($password2) || empty($email) || empty($fullname) || empty($alamat) || empty($umur) || empty($jk) || empty($level)) {
         echo "<script>alert('Semua kolom harus diisi. Silakan lengkapi formulir.')</script>";
         header('Refresh: 0; url=register.php');
         exit;
@@ -49,7 +51,7 @@ if (isset($_POST['register'])) {
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // Add the new user to the database
-    $query = "INSERT INTO user (Username, Password, Email, NamaLengkap, Alamat, Level) VALUES ('$username', '$password', '$email', '$fullname', '$alamat', '$level')";
+    $query = "INSERT INTO user (Username, Password, Email, NamaLengkap, Alamat, Umur, JenisKelamin, Level) VALUES ('$username', '$password', '$email', '$fullname', '$alamat', '$umur', '$jk', '$level')";
     mysqli_query($db, $query);
 
     if (mysqli_affected_rows($db) > 0) {
@@ -101,6 +103,21 @@ if (isset($_POST['register'])) {
                     <div class="form-group">
                         <label for="alamat">Alamat</label>
                         <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan Alamat">
+                    </div>
+                    <div class="form-group">
+                        <label for="umur">Umur</label>
+                        <input type="number" class="form-control" name="umur" id="number" placeholder="Masukkan Umur" min="1" max="999">
+                    </div>
+                    <div class="form-group">
+                    <label>Jenis Kelamin</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="jk_laki" value="Laki-Laki">
+                        <label class="form-check-label" for="jk_laki">Laki-Laki</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="jk_perempuan" value="Perempuan">
+                        <label class="form-check-label" for="jk_perempuan">Perempuan</label>
+                    </div>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>

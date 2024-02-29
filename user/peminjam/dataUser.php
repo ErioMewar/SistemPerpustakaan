@@ -38,11 +38,13 @@ $resultPeminjam = $stmtPeminjam->get_result();
         <table class="table">
             <thead>
                 <tr>
-                    <th>No</th>
+                <th>No</th>
                     <th>Username</th>
                     <th>Email</th>
                     <th>Nama Lengkap</th>
                     <th>Alamat</th>
+                    <th>Umur</th>
+                    <th>Jenis Kelamin</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,6 +58,8 @@ $resultPeminjam = $stmtPeminjam->get_result();
                         <td class="break"><?php echo $row['Email']; ?></td>
                         <td class="break"><?php echo $row['NamaLengkap']; ?></td>
                         <td class="break"><?php echo $row['Alamat']; ?></td>
+                        <td class="break"><?php echo $row['Umur']; ?></td>
+                        <td class="break"><?php echo $row['JenisKelamin']; ?></td>
                     </tr>
                     <?php
                     $counter++;
