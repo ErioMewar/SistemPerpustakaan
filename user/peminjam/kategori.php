@@ -40,8 +40,9 @@ $username = $_SESSION['Username'];
                     $result_kategori = $db->query($query_kategori);
                     while ($row = $result_kategori->fetch_assoc()) {
                         echo "<tr>";
-                    echo "<td>{$row['NamaKategori']}</td>";
-                }
+                        echo "<td><a href='buku.php?kategori_id={$row['KategoriID']}' class='btn btn-success'>{$row['NamaKategori']}</a></td>";
+                        echo "</tr>";
+                    }
                     ?>
                 </tbody>
             </table>
