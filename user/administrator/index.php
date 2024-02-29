@@ -58,7 +58,7 @@ while ($row = mysqli_fetch_assoc($query_jumlah_user)) {
     <div class="main-content">
         
             <h3>Selamat datang Administrator <?php echo $username; ?> (＾▽＾)</h3>
-                <div class="card1">
+            <div class="card1">
                         <h3 class="card-text"><i class="bi bi-person-circle"></i> Administrator</h3>
                         <p class="card-title"><?= $row_admin; ?></p>
                         <a href="dataUser.php" class="button">Lihat</a>

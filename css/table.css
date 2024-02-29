@@ -44,16 +44,3 @@ h2 {
 .btn {
   margin: 5px;
 }
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #7dbeff;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #00629b;
-  border-radius: 5px;
-}
