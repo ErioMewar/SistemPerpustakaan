@@ -46,6 +46,7 @@ $resultPeminjam = $stmtPeminjam->get_result();
     <?php include_once('../../dashboard/navbar.php'); ?>
     <?php include_once('../../dashboard/sidebar.php'); ?>
     <div class="main-content">
+    <a href="../../function/editPersonal.php?$level = $_SESSION['Level'];" class="btn btn-primary"><i class="bi bi-pencil" title="Edit"></i> Edit Data Diri</a>
         <h3>Administrator</h3>
         <table class="table">
             <thead>
